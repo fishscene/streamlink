@@ -21,7 +21,8 @@ antenna             antenna.gr           --    Yes
 ard_live            live.daserste.de     Yes   --    Streams may be geo-restricted to Germany.
 ard_mediathek       ardmediathek.de      Yes   Yes   Streams may be geo-restricted to Germany.
 artetv              arte.tv              Yes   Yes
-atv                 atv.com.tr           Yes   No
+atv                 - atv.com.tr         Yes   No
+                    - a2tv.com.tr
 azubutv             azubu.tv             Yes   No
 bambuser            bambuser.com         Yes   Yes
 beam                beam.pro             Yes   No
@@ -39,6 +40,10 @@ dingittv            dingit.tv            Yes   Yes
 disney_de           - video.disney.de    Yes   Yes   Streams may be geo-restricted to Germany.
                     - disneychannel.de
 dmcloud             api.dmcloud.net      Yes   --
+dogan               - teve2.com.tr       Yes   Yes   VOD is supported for teve2 and kanald
+                    - kanald.com.tr
+                    - dreamtv.com.tr
+                    - cnnturk.com
 dommune             dommune.com          Yes   --
 douyutv             douyutv.com          Yes   --
 dplay               - dplay.se           --    Yes   Streams may be geo-restricted.
@@ -50,12 +55,14 @@ euronews            euronews.com         Yes   No
 expressen           expressen.se         Yes   Yes
 filmon              filmon.com           Yes   Yes   Only SD quality streams.
 filmon_us           filmon.us            Yes   Yes
+foxtr               fox.com.tr           Yes   No
 furstream           furstre.am           Yes   No
 gaminglive          gaminglive.tv        Yes   Yes
 gomexp              gomexp.com           Yes   No
 goodgame            goodgame.ru          Yes   No    Only HLS streams are available.
 hitbox              hitbox.tv            Yes   Yes
 itvplayer           itv.com/itvplayer    Yes   Yes   Streams may be geo-restricted to Great Britain.
+kralmuzik           kralmuzik.com.tr     Yes   No
 letontv             leton.tv             Yes   --
 livecoding          livecoding.tv        Yes   --
 livestation         livestation.com      Yes   --
@@ -72,6 +79,7 @@ nos                 nos.nl               Yes   Yes   Streams may be geo-restrict
 npo                 npo.nl               Yes   Yes   Streams may be geo-restricted to Netherlands.
 nrk                 - tv.nrk.no          Yes   Yes   Streams may be geo-restricted to Norway.
                     - radio.nrk.no
+ntv                 ntv.com.tr           Yes   No
 oldlivestream       original.liv... [3]_ Yes   No    Only mobile streams are supported.
 openrectv           openrec.tv           Yes   Yes
 orf_tvthek          tvthek.orf.at        Yes   Yes
@@ -83,9 +91,11 @@ rtve                rtve.es              Yes   No
 ruv                 ruv.is               Yes   Yes   Streams may be geo-restricted to Iceland.
 seemeplay           seemeplay.ru         Yes   Yes
 servustv            servustv.com         ?     ?
+showtv              showtv.com.tr        Yes   No
 speedrunslive       speedrunslive.com    Yes   --    URL forwarder to Twitch channels.
 sportschau          sportschau.de        Yes   No
 ssh101              ssh101.com           Yes   No
+startv              startv.com.tr        Yes   No
 streamboat          streamboat.tv        Yes   No
 streamingvi... [1]_ streamingvid... [2]_ Yes   --    RTMP streams requires rtmpdump with
                                                      K-S-V patches.
@@ -102,6 +112,7 @@ tv3cat              tv3.cat              Yes   Yes   Streams may be geo-restrict
 tv4play             - tv4play.se         Yes   Yes   Streams may be geo-restricted to Sweden.
                                                      Only non-premium streams currently supported.
                     - fotbollskanalen.se
+tv8                 tv8.com.tr           Yes   No
 tvcatchup           - tvcatchup.com      Yes   No    Streams may be geo-restricted to Great Britain.
 tvplayer            tvplayer.com         Yes   No    Streams may be geo-restricted to Great Britain. Premium streams are not supported.
 twitch              twitch.tv            Yes   Yes   Possible to authenticate for access to

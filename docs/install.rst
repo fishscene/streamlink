@@ -25,6 +25,7 @@ Distribution                         Installing
 
                                         $ cd /usr/pkgsrc/multimedia/streamlink
                                         # make install clean
+`NixOS`_                             `Installing NixOS packages`_
 `Solus`_                             .. code-block:: console
 
                                         # eopkg install streamlink
@@ -42,11 +43,13 @@ Distribution                         Installing
 .. _Arch Linux (aur, git): https://aur.archlinux.org/packages/streamlink-git/
 .. _Gentoo Linux: https://packages.gentoo.org/package/net-misc/streamlink
 .. _NetBSD (pkgsrc): http://pkgsrc.se/multimedia/streamlink
+.. _NixOS: https://github.com/NixOS/nixpkgs/tree/master/pkgs/applications/video/streamlink
 .. _Solus: https://git.solus-project.com/packages/streamlink/
 .. _Ubuntu: http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu/pool/main/s/streamlink/
 .. _Void: https://github.com/voidlinux/void-packages/tree/master/srcpkgs/streamlink
 
 .. _Installing AUR packages: https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages
+.. _Installing NixOS packages: https://nixos.org/wiki/Install/remove_software#How_to_install_software
 
 Other platforms
 ---------------
@@ -57,7 +60,24 @@ Platform                             Installing
 Mac OS X                             .. code-block:: console
 
                                         # easy_install -U streamlink
-Microsoft Windows                    See `Windows binaries`_.
+Microsoft Windows                    See `Windows binaries`_ and `Windows portable version`_.
+==================================== ===========================================
+
+
+Package maintainers
+-------------------
+==================================== ===========================================
+Distribution/Platform                Maintainer
+==================================== ===========================================
+Arch                                 Josip Ponjavic <josipponjavic at gmail.com>
+Gentoo                               soredake <fdsfgs at krutt.org>
+NetBSD                               Maya Rashish <maya at netbsd.org>
+NixOS                                Tuomas Tynkkynen <tuomas.tynkkynen at iki.fi>
+Solus                                Bryan T. Meyers <bmeyers at datadrake.com>
+Ubuntu                               Alin Andrei <andrew at webupd8.org>
+Void                                 wkuipers <wietse at kuiprs.nl>
+Windows binaries                     beardypig <beardypig at protonmail.com>
+Windows port. version                RosadinTV
 ==================================== ===========================================
 
 
@@ -176,6 +196,11 @@ instead.
 Windows binaries
 ----------------
 
+.. important::
+
+    Windows XP is not supported.
+    Windows Vista requires at least SP2 to be installed. 
+
 You can download the latest stable Windows installer `here <https://github.com/streamlink/streamlink/releases>`_.
 
 You can download the latest nightly Windows installer `here <https://streamlink-builds.s3.amazonaws.com/nightly/windows/streamlink-latest.exe>`_.
@@ -194,3 +219,15 @@ and performs the following tasks:
 
 To build the installer, you need to have NSIS and pynsist installed on your
 system.
+
+
+Windows portable version
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Instructions:
+
+- Download https://github.com/streamlink/streamlink-portable/archive/master.zip
+
+- Extract the "Streamlink for Windows (Compiled)" folder from the ZIP file
+
+- Check README.txt file for requirements and run "Streamlink for Windows.exe"

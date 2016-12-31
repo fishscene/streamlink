@@ -43,6 +43,7 @@ packages=requests
 pypi_wheels=pycryptodome==3.4.3
 
 files=../win32/rtmpdump > \$INSTDIR
+      ../win32/LICENSE.txt > \$INSTDIR
 
 [Command streamlink]
 entry_point=streamlink_cli.main:main
@@ -54,8 +55,9 @@ installer_name=${dist_dir}/${STREAMLINK_INSTALLER}.exe
 EOF
 
 cat >"${build_dir}/installer_tmpl.nsi" <<EOF
+!include "FileFunc.nsh"
 !include "TextFunc.nsh"
-[% extends "pyapp.nsi" %]
+[% extends "pyapp_msvcrt.nsi" %]
 
 [% block modernui %]
     ; let the user review all changes being made to the system first
@@ -90,7 +92,6 @@ cat >"${build_dir}/installer_tmpl.nsi" <<EOF
 
 [% block install_files %]
     [[ super() ]]
-
     ; Install config file
     SetShellVarContext current # install the config file for the current user
     SetOverwrite off # config file we don't want to overwrite
@@ -100,6 +101,16 @@ cat >"${build_dir}/installer_tmpl.nsi" <<EOF
     SetOverwrite ifnewer
     SetOutPath -
     SetShellVarContext all
+
+    ; Add metadata
+    ; hijack the install_files block for this
+    WriteRegStr HKLM "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\\${PRODUCT_NAME}" "DisplayVersion" "${STREAMLINK_VERSION}"
+    WriteRegStr HKLM "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\\${PRODUCT_NAME}" "Publisher" "Streamlink"
+    WriteRegStr HKLM "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\\${PRODUCT_NAME}" "URLInfoAbout" "https://streamlink.github.io/"
+    WriteRegStr HKLM "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\\${PRODUCT_NAME}" "HelpLink" "https://streamlink.github.io/"
+	\${GetSize} "\$INSTDIR" "/S=0K" \$0 \$1 \$2
+	IntFmt \$0 "0x%08X" \$0
+	WriteRegDWORD HKLM "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\\${PRODUCT_NAME}" "EstimatedSize" "\$0"
 [% endblock %]
 
 [% block install_shortcuts %]
